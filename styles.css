@@ -1,0 +1,39 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+}
+
+.left-side {
+  width: 25%;
+  height: 100%;
+  background-color: #3494D3;
+}
+
+.middle {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  width: 25%;
+  height: 100%;
+  background-color: #3494D3;
+}
+
+.game-board-container {
+  height: 20em;
+  width: 20em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
