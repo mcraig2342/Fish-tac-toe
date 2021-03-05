@@ -14,6 +14,8 @@
   width: 25%;
   height: 100%;
   background-color: #3494D3;
+  display: flex;
+  justify-content: center;
 }
 
 .middle {
@@ -29,6 +31,8 @@
   width: 25%;
   height: 100%;
   background-color: #3494D3;
+  display: flex;
+  justify-content: center;
 }
 
 .game-board-container {
