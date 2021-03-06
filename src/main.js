@@ -13,3 +13,15 @@ var square6 = document.getElementById("square6");
 var square7 = document.getElementById("square7");
 var square8 = document.getElementById("square8");
 var square9 = document.getElementById("square9");
+
+
+window.addEventListener("load", createGame);
+square1.addEventListener("click", clickSquare);
+square2.addEventListener("click", clickSquare);
+square3.addEventListener("click", clickSquare);
+square4.addEventListener("click", clickSquare);
+square5.addEventListener("click", clickSquare);
+square6.addEventListener("click", clickSquare);
+square7.addEventListener("click", clickSquare);
+square8.addEventListener("click", clickSquare);
+square9.addEventListener("click", clickSquare);
