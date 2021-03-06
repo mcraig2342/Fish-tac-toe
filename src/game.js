@@ -31,5 +31,17 @@ class Game {
       return "Player 2 wins"
     }
   }
+    checkCatsGame() {
+      if (this.totalMoves >= 9) {
+        return "Cats game"
+      }
+    }
 
+    resetGame() {
+      this.totalMoves = 0;
+      this.turn = this.player1;
+      this.gameBoard = [0,0,0
+                        0,0,0
+                        0,0,0];
+    }
 }
