@@ -10,11 +10,11 @@ class Game {
 
   }
 
-  nextTurn() {
+  changeTurn() {
     if (this.turn === this.player1) {
-      this.turn = player2;
+      this.turn = this.player2;
     } else {
-      this.turn = player1;
+      this.turn = this.player1;
     }
   }
 
