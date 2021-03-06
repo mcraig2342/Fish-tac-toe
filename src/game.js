@@ -8,7 +8,7 @@ class Game {
   }
 
   changeTurn() {
-    if (this.turn === this.player1) {
+    if (this.turn.id === 1) {
       this.turn = this.player2;
     } else {
       this.turn = this.player1;
@@ -58,8 +58,8 @@ class Game {
     this.totalMoves = 0;
     this.turn = this.player1;
     this.gameBoard = [
-      [0, 0, 0]
-      [0, 0, 0]
+      [0, 0, 0],
+      [0, 0, 0],
       [0, 0, 0]
     ];
   }

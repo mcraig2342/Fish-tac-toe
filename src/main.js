@@ -3,6 +3,9 @@ var currentBoard = [
   [0, 0, 0],
   [0, 0, 0]
 ];
+var player1 = new Player(1, "❌");
+var player2 = new Player(2, "⭕️");
+var newGame = new Game(player1, player2, currentBoard);
 
 var square1 = document.getElementById("square1");
 var square2 = document.getElementById("square2");
@@ -15,7 +18,7 @@ var square8 = document.getElementById("square8");
 var square9 = document.getElementById("square9");
 
 
-window.addEventListener("load", createGame);
+
 square1.addEventListener("click", clickSquare);
 square2.addEventListener("click", clickSquare);
 square3.addEventListener("click", clickSquare);
@@ -27,13 +30,16 @@ square8.addEventListener("click", clickSquare);
 square9.addEventListener("click", clickSquare);
 
 
-function createGame() {
-  var player1 = new Player(1, "❌");
-  var player2 = new Player(2, "⭕️");
-  var newGame = new Game(player1,player2,currentBoard);
-  return newGame;
-}
-
 function clickSquare() {
-
+  // newGame.updateGameBoard();
+  newGame.totalMoves++;
+  event.target.innerHTML += newGame.turn.token;
+  event.target.removeEventListener("click", clickSquare)
+  newGame.changeTurn();
+  if (newGame.turn.id === 2) {
+    newGame.checkWinPlayer1();
+  } else {
+    newGame.checkWinPlayer2();
+  }
+  console.log(newGame.checkCatsGame());
 }
