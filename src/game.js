@@ -18,5 +18,9 @@ class Game {
     }
   }
 
+  updateGameBoard(currentBoard) {
+    this.gameBoard = currentBoard;
+  }
+
   
 }
