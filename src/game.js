@@ -9,4 +9,14 @@ class Game {
                       0,0,0]
 
   }
+
+  nextTurn() {
+    if (this.turn === this.player1) {
+      this.turn = player2;
+    } else {
+      this.turn = player1;
+    }
+  }
+
+  
 }
