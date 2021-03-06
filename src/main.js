@@ -1,8 +1,8 @@
 var currentBoard = [
+  [0, 0, 0],
+  [0, 0, 0],
   [0, 0, 0]
-  [0, 0, 0]
-  [0, 0, 0]
-]
+];
 
 var square1 = document.getElementById("square1");
 var square2 = document.getElementById("square2");
@@ -25,3 +25,15 @@ square6.addEventListener("click", clickSquare);
 square7.addEventListener("click", clickSquare);
 square8.addEventListener("click", clickSquare);
 square9.addEventListener("click", clickSquare);
+
+
+function createGame() {
+  var player1 = new Player(1, "❌");
+  var player2 = new Player(2, "⭕️");
+  var newGame = new Game(player1,player2,currentBoard);
+  return newGame;
+}
+
+function clickSquare() {
+
+}
