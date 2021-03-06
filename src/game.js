@@ -22,5 +22,14 @@ class Game {
     this.gameBoard = currentBoard;
   }
 
-  
+  checkWin(winningBoardsPlayer1, winningBoardsPlayer2) {
+    if (winningBoardsPlayer1.includes(this.gameBoard)) {
+      this.player1.wins++
+      return "Player 1 wins"
+    } else if (winningBoardsPlayer2.includes(this.gameBoard)) {
+      this.player2.wins++
+      return "Player 2 wins"
+    }
+  }
+
 }
