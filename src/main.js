@@ -32,7 +32,7 @@ square9.addEventListener("click", clickSquare);
 
 function clickSquare() {
   updateCurrentBoard();
-  // newGame.updateGameBoard();
+  newGame.updateGameBoard(currentBoard);
   newGame.totalMoves++;
   event.target.innerHTML += newGame.turn.token;
   event.target.removeEventListener("click", clickSquare)
@@ -62,7 +62,7 @@ function updateCurrentBoard() {
      currentBoard[2].splice(0, 1, newGame.turn.id);
    } else if (event.target.id === "square8") {
      currentBoard[2].splice(1, 1, newGame.turn.id);
-   } else if (event.target.id === "square2") {
+   } else if (event.target.id === "square9") {
      currentBoard[2].splice(2, 1, newGame.turn.id);
    }
 }
