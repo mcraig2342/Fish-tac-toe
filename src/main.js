@@ -22,6 +22,7 @@ var popupWrapper = document.getElementById("popupWrapper");
 var winningPlayer = document.getElementById("winningPlayer");
 var clearP1Wins = document.getElementById("clearP1Wins");
 var clearP2Wins = document.getElementById("clearP2Wins");
+var countDown = document.getElementById("countDown");
 
 window.addEventListener("load", updatePlayerScore)
 square1.addEventListener("click", clickSquare);
@@ -98,4 +99,12 @@ function clearWins(player) {
     player2.wins = 0
     updatePlayerScore();
   }
+}
+
+function startCountDown() {
+  var timeleft = 10;
+  var timer = setInterval(function() {
+      countDown.innerHTML = timeleft;
+      timeleft -= 1;
+  }, 1000);
 }

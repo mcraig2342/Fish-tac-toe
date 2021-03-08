@@ -81,10 +81,11 @@ class Game {
     ];
   }
 
-  showWin(){
+  showWin() {
+  startCountDown();
   this.player1.saveWinsToStorage();
   this.player2.saveWinsToStorage();
   updatePlayerScore();
-  setTimeout(this.resetGame, 10 * 1000);
+  setTimeout(this.resetGame, 11 * 1000);
   }
 }
