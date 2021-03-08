@@ -22,18 +22,18 @@ class Game {
   checkWinPlayer1() {
     for (var i = 0; i < this.gameBoard.length; i++) {
       if (this.gameBoard[i][0] === 1 && this.gameBoard[i][1] === 1 && this.gameBoard[i][2] === 1) {
-        this.player1.wins++;
+        this.player1.wins++
         this.showWin();
       } else if (this.gameBoard[0][i] === 1 && this.gameBoard[1][i] === 1 && this.gameBoard[2][i] === 1) {
         this.player1.wins++
-        this.showWin(;
+        this.showWin();
       }
     }
     if (this.gameBoard[0][0] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][2] === 1) {
-      this.player1.wins++;
+      this.player1.wins++
       this.showWin();
     } else if (this.gameBoard[0][2] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][0] === 1) {
-      this.player1.wins++;
+      this.player1.wins++
       this.showWin();
     }
   }
@@ -76,6 +76,6 @@ class Game {
   showWin(){
   this.player1.saveWinsToStorage();
   this.player2.saveWinsToStorage();
-  setTimeout(this.resetGame, 10*1000);
+  setTimeout(this.resetGame, 10 * 1000);
   }
 }
