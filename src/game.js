@@ -76,6 +76,7 @@ class Game {
   showWin(){
   this.player1.saveWinsToStorage();
   this.player2.saveWinsToStorage();
+  updatePlayerScore();
   setTimeout(this.resetGame, 10 * 1000);
   }
 }

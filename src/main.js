@@ -16,9 +16,10 @@ var square6 = document.getElementById("square6");
 var square7 = document.getElementById("square7");
 var square8 = document.getElementById("square8");
 var square9 = document.getElementById("square9");
+var player1Wins = document.getElementById("player1Wins");
+var player2Wins = document.getElementById("player2Wins");
 
-
-
+window.addEventListener("load", updatePlayerScore)
 square1.addEventListener("click", clickSquare);
 square2.addEventListener("click", clickSquare);
 square3.addEventListener("click", clickSquare);
@@ -65,4 +66,9 @@ function updateCurrentBoard() {
   } else if (event.target.id === "square9") {
     currentBoard[2].splice(2, 1, newGame.turn.id);
   }
+}
+
+function updatePlayerScore() {
+  player1Wins.innerText = `${player1.wins} wins`;
+  player2Wins.innerText = `${player2.wins} wins`;
 }
