@@ -1,0 +1,91 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+}
+
+.left-side {
+  width: 25%;
+  height: 100%;
+  background-color: #3494D3;
+  display: flex;
+  justify-content: center;
+}
+
+.middle {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  width: 25%;
+  height: 100%;
+  background-color: #3494D3;
+  display: flex;
+  justify-content: center;
+}
+
+.game-board-container {
+  height: 20em;
+  width: 20em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.square-1 {
+  border-bottom: .25rem solid #3494D3;
+  border-right: .25rem solid #3494D3;
+}
+
+.square-2 {
+  border-bottom: .25rem solid #3494D3;
+  border-right: .25rem solid #3494D3;
+  border-left: .25rem solid #3494D3;
+}
+
+.square-3 {
+  border-bottom: .25rem solid #3494D3;
+  border-left: .25rem solid #3494D3;
+}
+
+.square-4 {
+  border-bottom: .25rem solid #3494D3;
+  border-right: .25rem solid #3494D3;
+  border-top: .25rem solid #3494D3;
+}
+
+.square-5 {
+  border: .25rem solid #3494D3;
+}
+
+.square-6 {
+  border-bottom: .25rem solid #3494D3;
+  border-left: .25rem solid #3494D3;
+  border-top: .25rem solid #3494D3;
+}
+
+.square-7 {
+  border-right: .25rem solid #3494D3;
+  border-top: .25rem solid #3494D3;
+}
+
+.square-8 {
+  border-left: .25rem solid #3494D3;
+  border-right: .25rem solid #3494D3;
+  border-top: .25rem solid #3494D3;
+}
+
+.square-9 {
+  border-left: .25rem solid #3494D3;
+  border-top: .25rem solid #3494D3;
+}
