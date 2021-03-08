@@ -23,6 +23,7 @@ var winningPlayer = document.getElementById("winningPlayer");
 var clearP1Wins = document.getElementById("clearP1Wins");
 var clearP2Wins = document.getElementById("clearP2Wins");
 var countDown = document.getElementById("countDown");
+var turnDisplay = document.getElementById("turnDisplay");
 
 window.addEventListener("load", updatePlayerScore)
 square1.addEventListener("click", clickSquare);
@@ -49,6 +50,7 @@ function clickSquare() {
   event.target.innerHTML += newGame.turn.token;
   event.target.removeEventListener("click", clickSquare)
   newGame.changeTurn();
+  updatePlayerTurn();
   if (newGame.turn.id === 2) {
     newGame.checkWinPlayer1();
   } else {
@@ -107,4 +109,12 @@ function startCountDown() {
       countDown.innerHTML = timeleft;
       timeleft -= 1;
   }, 1000);
+}
+
+function updatePlayerTurn() {
+  if (newGame.turn.id === 1) {
+    turnDisplay.innerText = "❌'s Turn";
+  } else {
+    turnDisplay.innerText = "⭕️'s Turn";
+  }
 }
