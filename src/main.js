@@ -18,6 +18,8 @@ var square8 = document.getElementById("square8");
 var square9 = document.getElementById("square9");
 var player1Wins = document.getElementById("player1Wins");
 var player2Wins = document.getElementById("player2Wins");
+var popupWrapper = document.getElementById("popupWrapper");
+var winningPlayer = document.getElementById("winningPlayer");
 
 window.addEventListener("load", updatePlayerScore)
 square1.addEventListener("click", clickSquare);
@@ -71,4 +73,9 @@ function updateCurrentBoard() {
 function updatePlayerScore() {
   player1Wins.innerText = `${player1.wins} wins`;
   player2Wins.innerText = `${player2.wins} wins`;
+}
+
+function showWinnerPopup(player) {
+  winningPlayer.innerText = `${player.token} Wins!`
+  popupWrapper.classList.remove("hidden")
 }

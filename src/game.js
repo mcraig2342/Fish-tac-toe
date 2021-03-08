@@ -24,17 +24,21 @@ class Game {
       if (this.gameBoard[i][0] === 1 && this.gameBoard[i][1] === 1 && this.gameBoard[i][2] === 1) {
         this.player1.wins++
         this.showWin();
+        showWinnerPopup(this.player1);
       } else if (this.gameBoard[0][i] === 1 && this.gameBoard[1][i] === 1 && this.gameBoard[2][i] === 1) {
         this.player1.wins++
         this.showWin();
+        showWinnerPopup(this.player1);
       }
     }
     if (this.gameBoard[0][0] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][2] === 1) {
       this.player1.wins++
       this.showWin();
+      showWinnerPopup(this.player1);
     } else if (this.gameBoard[0][2] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][0] === 1) {
       this.player1.wins++
       this.showWin();
+      showWinnerPopup(this.player1);
     }
   }
 
@@ -43,17 +47,21 @@ class Game {
       if (this.gameBoard[i][0] === 2 && this.gameBoard[i][1] === 2 && this.gameBoard[i][2] === 2) {
         this.player2.wins++;
         this.showWin();
+        showWinnerPopup(this.player2);
       } else if (this.gameBoard[0][i] === 2 && this.gameBoard[1][i] === 2 && this.gameBoard[2][i] === 2) {
         this.player2.wins++;
         this.showWin();
+        showWinnerPopup(this.player2);
       }
     }
     if (this.gameBoard[0][0] === 2 && this.gameBoard[1][1] === 2 && this.gameBoard[2][2] === 2) {
       this.player2.wins++;
       this.showWin();
+      showWinnerPopup(this.player2);
     } else if (this.gameBoard[0][2] === 2 && this.gameBoard[1][1] === 2 && this.gameBoard[2][0] === 2) {
       this.player2.wins++;
       this.showWin();
+      showWinnerPopup(this.player2);
     }
   }
   checkCatsGame() {
