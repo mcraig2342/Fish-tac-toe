@@ -7,10 +7,10 @@ class Player {
   }
 
   saveWinsToStorage() {
-   localStorage.setItem(this.id, this.wins);
- }
+    localStorage.setItem(this.id, this.wins);
+  }
 
- retrieveWinsFromStorage() {
-   localStorage.getItem(this.id);
+  retrieveWinsFromStorage() {
+    localStorage.getItem(this.id);
   }
 }

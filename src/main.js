@@ -46,23 +46,23 @@ function clickSquare() {
 }
 
 function updateCurrentBoard() {
-   if (event.target.id === "square1") {
-     currentBoard[0].splice(0, 1, newGame.turn.id);
-   } else if (event.target.id === "square2") {
-     currentBoard[0].splice(1, 1, newGame.turn.id);
-   } else if (event.target.id === "square3") {
-     currentBoard[0].splice(2, 1, newGame.turn.id);
-   } else if (event.target.id === "square4") {
-     currentBoard[1].splice(0, 1, newGame.turn.id);
-   } else if (event.target.id === "square5") {
-     currentBoard[1].splice(1, 1, newGame.turn.id);
-   } else if (event.target.id === "square6") {
-     currentBoard[1].splice(2, 1, newGame.turn.id);
-   } else if (event.target.id === "square7") {
-     currentBoard[2].splice(0, 1, newGame.turn.id);
-   } else if (event.target.id === "square8") {
-     currentBoard[2].splice(1, 1, newGame.turn.id);
-   } else if (event.target.id === "square9") {
-     currentBoard[2].splice(2, 1, newGame.turn.id);
-   }
+  if (event.target.id === "square1") {
+    currentBoard[0].splice(0, 1, newGame.turn.id);
+  } else if (event.target.id === "square2") {
+    currentBoard[0].splice(1, 1, newGame.turn.id);
+  } else if (event.target.id === "square3") {
+    currentBoard[0].splice(2, 1, newGame.turn.id);
+  } else if (event.target.id === "square4") {
+    currentBoard[1].splice(0, 1, newGame.turn.id);
+  } else if (event.target.id === "square5") {
+    currentBoard[1].splice(1, 1, newGame.turn.id);
+  } else if (event.target.id === "square6") {
+    currentBoard[1].splice(2, 1, newGame.turn.id);
+  } else if (event.target.id === "square7") {
+    currentBoard[2].splice(0, 1, newGame.turn.id);
+  } else if (event.target.id === "square8") {
+    currentBoard[2].splice(1, 1, newGame.turn.id);
+  } else if (event.target.id === "square9") {
+    currentBoard[2].splice(2, 1, newGame.turn.id);
+  }
 }
