@@ -119,18 +119,20 @@ function reload() {
   location.reload()
 }
 
+function updateWins() {
+  newGame.showWin();
+  updatePlayerScore();
+  setTimeout(reload, 11 * 1000);
+}
+
 function checkWins() {
   if(newGame.checkWin() === 1) {
-    player1.wins++
-    newGame.showWin();
-    updatePlayerScore();
-    setTimeout(reload, 11 * 1000);
+    player1.wins++;
+    updateWins();
     showWinnerPopup(player1);
   } else if (newGame.checkWin() === 2) {
-    player2.wins++
-    newGame.showWin();
-    updatePlayerScore();
-    setTimeout(reload, 11 * 1000);
+    player2.wins++;
+    updateWins();
     showWinnerPopup(player2);
   }
 }
