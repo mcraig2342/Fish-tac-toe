@@ -115,17 +115,31 @@ function updatePlayerTurn() {
   }
 }
 
+function reload() {
+  location.reload()
+}
+
 function checkWins() {
-  if (newGame.turn.id === 2) {
-    newGame.checkWinPlayer1();
-  } else {
-    newGame.checkWinPlayer2();
+  if(newGame.checkWin() === 1) {
+    player1.wins++
+    newGame.showWin();
+    updatePlayerScore();
+    setTimeout(reload, 11 * 1000);
+    showWinnerPopup(player1);
+  } else if (newGame.checkWin() === 2) {
+    player2.wins++
+    newGame.showWin();
+    updatePlayerScore();
+    setTimeout(reload, 11 * 1000);
+    showWinnerPopup(player2);
   }
 }
+
 
 function checkForDraw() {
   if (newGame.checkCatsGame()) {
     turnDisplay.innerText = "Draw!";
     setTimeout(newGame.resetGame, 5 * 1000);
+    setTimeout(reload, 5 * 1000);
   }
 }
