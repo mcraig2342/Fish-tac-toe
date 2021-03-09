@@ -66,7 +66,7 @@ class Game {
   }
   checkCatsGame() {
     if (this.totalMoves >= 9) {
-      return "Cats game";
+      return true;
     }
   }
 

@@ -37,10 +37,10 @@ square8.addEventListener("click", clickSquare);
 square9.addEventListener("click", clickSquare);
 clearP1Wins.addEventListener("click", function() {
   clearWins(1)
-})
+});
 clearP2Wins.addEventListener("click", function() {
   clearWins(2)
-})
+});
 
 
 function clickSquare() {
@@ -51,12 +51,8 @@ function clickSquare() {
   event.target.removeEventListener("click", clickSquare)
   newGame.changeTurn();
   updatePlayerTurn();
-  if (newGame.turn.id === 2) {
-    newGame.checkWinPlayer1();
-  } else {
-    newGame.checkWinPlayer2();
-  }
-  newGame.checkCatsGame();
+  checkWins();
+  checkForDraw();
 }
 
 function updateCurrentBoard() {
@@ -114,7 +110,22 @@ function startCountDown() {
 function updatePlayerTurn() {
   if (newGame.turn.id === 1) {
     turnDisplay.innerText = "❌'s Turn";
-  } else {
+  } else if (newGame.turn.id === 2){
     turnDisplay.innerText = "⭕️'s Turn";
+  }
+}
+
+function checkWins() {
+  if (newGame.turn.id === 2) {
+    newGame.checkWinPlayer1();
+  } else {
+    newGame.checkWinPlayer2();
+  }
+}
+
+function checkForDraw() {
+  if (newGame.checkCatsGame()) {
+    turnDisplay.innerText = "Draw!";
+    setTimeout(newGame.resetGame, 5 * 1000);
   }
 }
