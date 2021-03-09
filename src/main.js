@@ -89,11 +89,11 @@ function showWinnerPopup(player) {
 
 function clearWins(player) {
   if (player === 1) {
-    localStorage.setItem(1,0)
+    localStorage.setItem(1, 0)
     player1.wins = 0
     updatePlayerScore();
   } else {
-    localStorage.setItem(2,0)
+    localStorage.setItem(2, 0)
     player2.wins = 0
     updatePlayerScore();
   }
@@ -102,15 +102,15 @@ function clearWins(player) {
 function startCountDown() {
   var timeleft = 10;
   var timer = setInterval(function() {
-      countDown.innerHTML = timeleft;
-      timeleft -= 1;
+    countDown.innerHTML = timeleft;
+    timeleft -= 1;
   }, 1000);
 }
 
 function updatePlayerTurn() {
   if (newGame.turn.id === 1) {
     turnDisplay.innerText = "🐠's Turn";
-  } else if (newGame.turn.id === 2){
+  } else if (newGame.turn.id === 2) {
     turnDisplay.innerText = "🐡's Turn";
   }
 }
@@ -126,7 +126,7 @@ function updateWins() {
 }
 
 function checkWins() {
-  if(newGame.checkWin() === 1) {
+  if (newGame.checkWin() === 1) {
     player1.wins++;
     updateWins();
     showWinnerPopup(player1);
