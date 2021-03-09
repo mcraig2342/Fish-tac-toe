@@ -20,6 +20,8 @@ var player1Wins = document.getElementById("player1Wins");
 var player2Wins = document.getElementById("player2Wins");
 var popupWrapper = document.getElementById("popupWrapper");
 var winningPlayer = document.getElementById("winningPlayer");
+var clearP1Wins = document.getElementById("clearP1Wins");
+var clearP2Wins = document.getElementById("clearP2Wins");
 
 window.addEventListener("load", updatePlayerScore)
 square1.addEventListener("click", clickSquare);
@@ -31,6 +33,12 @@ square6.addEventListener("click", clickSquare);
 square7.addEventListener("click", clickSquare);
 square8.addEventListener("click", clickSquare);
 square9.addEventListener("click", clickSquare);
+clearP1Wins.addEventListener("click", function() {
+  clearWins(1)
+})
+clearP2Wins.addEventListener("click", function() {
+  clearWins(2)
+})
 
 
 function clickSquare() {
@@ -78,4 +86,16 @@ function updatePlayerScore() {
 function showWinnerPopup(player) {
   winningPlayer.innerText = `${player.token} Wins!`
   popupWrapper.classList.remove("hidden")
+}
+
+function clearWins(player) {
+  if (player === 1) {
+    localStorage.setItem(1,0)
+    player1.wins = 0
+    updatePlayerScore();
+  } else {
+    localStorage.setItem(2,0)
+    player2.wins = 0
+    updatePlayerScore();
+  }
 }
