@@ -25,7 +25,7 @@ var clearP2Wins = document.getElementById("clearP2Wins");
 var countDown = document.getElementById("countDown");
 var turnDisplay = document.getElementById("turnDisplay");
 
-window.addEventListener("load", updatePlayerScore)
+window.addEventListener("load", updatePlayerScoreDisplayText)
 square1.addEventListener("click", clickSquare);
 square2.addEventListener("click", clickSquare);
 square3.addEventListener("click", clickSquare);
@@ -77,7 +77,7 @@ function updateCurrentBoard() {
   }
 }
 
-function updatePlayerScore() {
+function updatePlayerScoreDisplayText() {
   player1Wins.innerText = `${player1.wins} Wins`;
   player2Wins.innerText = `${player2.wins} Wins`;
 }
@@ -91,11 +91,11 @@ function clearWins(player) {
   if (player === 1) {
     localStorage.setItem(1, 0);
     player1.wins = 0;
-    updatePlayerScore();
+    updatePlayerScoreDisplayText();
   } else {
     localStorage.setItem(2, 0);
     player2.wins = 0;
-    updatePlayerScore();
+    updatePlayerScoreDisplayText();
   }
 }
 
@@ -116,12 +116,12 @@ function updatePlayerTurn() {
 }
 
 function reload() {
-  location.reload();
+  location.reload()
 }
 
 function updateWins() {
   newGame.showWin();
-  updatePlayerScore();
+  updatePlayerScoreDisplayText();
   setTimeout(reload, 5 * 1000);
 }
 
