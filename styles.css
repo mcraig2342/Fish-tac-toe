@@ -10,17 +10,13 @@
   display: flex;
 }
 
+/* sides and player info */
 .left-side {
   width: 25%;
   height: 100%;
   background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
   display: flex;
   justify-content: center;
-}
-
-.middle {
-  width: 50%;
-  height: 100%;
 }
 
 .right-side {
@@ -32,6 +28,46 @@
   justify-content: center;
 }
 
+.player-token {
+  font-size: 2em;
+  margin-top: 2em;
+  margin-left: 1.6em;
+}
+
+.player-container {
+  height: 20%;
+  width: 10em;
+}
+
+.player-wins {
+  font-size: 2em;
+  color: #134d71;
+  margin-left: .8em;
+  margin-top: 1em;
+}
+
+.clear-wins {
+  width: 10em;
+  font-size: 1em;
+  margin-top: 30em;
+  background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
+  border: #78a7c6 inset;
+  border-radius: 5%;
+}
+
+/* middle and gameBoard */
+.middle {
+  width: 50%;
+  height: 100%;
+}
+
+.turn-display {
+  font-size: 2em;
+  color: #134d71;
+  margin-top: 2em;
+  margin-left: 8.5em;
+}
+
 .game-board-container {
   margin-top: 15%;
   margin-left: 22%;
@@ -40,110 +76,84 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-1 {
   border-bottom: .25rem solid #149ed9;
   border-right: .25rem solid #149ed9;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-2 {
   border-bottom: .25rem solid #149ed9;
   border-right: .25rem solid #149ed9;
   border-left: .25rem solid #149ed9;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-3 {
   border-bottom: .25rem solid #149ed9;
   border-left: .25rem solid #149ed9;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-4 {
   border-bottom: .25rem solid #1dacc2;
   border-right: .25rem solid #1dacc2;
   border-top: .25rem solid #1dacc2;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-5 {
   border: .25rem solid #1dacc2;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-6 {
   border-bottom: .25rem solid #1dacc2;
   border-left: .25rem solid #1dacc2;
   border-top: .25rem solid #1dacc2;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-7 {
   border-right: .25rem solid #1ba8a3;
   border-top: .25rem solid #1ba8a3;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-8 {
   border-left: .25rem solid #1ba8a3;
   border-right: .25rem solid #1ba8a3;
   border-top: .25rem solid #1ba8a3;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
 .square-9 {
   border-left: .25rem solid #1ba8a3;
   border-top: .25rem solid #1ba8a3;
-  max-height: 132px;
-  max-width: 133.33px;
-  min-height: 132px;
-  min-width: 133.33px;
 }
 
+.new-token {
+  font-size: 3em;
+  margin: 0;
+  padding: 0;
+}
 
+/* winner popup box */
 .popup-wrapper {
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   overflow: auto;
-   position: fixed;
-   z-index: 1;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.4);
-   left: 0;
-   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: auto;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
 }
 
 .winner-popup {
@@ -153,48 +163,6 @@
   border: #78a7c6 inset;
   height: 30%;
   width: 40%;
-
-}
-
-.player-token {
-  font-size: 2em;
-  margin-top: 2em;
-  margin-left: 1.6em;
-
-}
-
-.player-container {
-  height: 20%;
-  width: 10em;
-}
-
-.player-wins {
-   font-size: 2em;
-   color: #134d71;
-   margin-left: .8em;
-   margin-top: 1em;
-}
-
-.clear-wins {
-   width: 10em;
-   font-size: 1em;
-   margin-top: 30em;
-   background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
-   border: #78a7c6 inset;
-   border-radius: 5%;
-}
-
-.turn-display {
-  font-size:2em;
-  color: #134d71;
-  margin-top: 2em;
-  margin-left: 8.5em;
-}
-
-.new-token {
-  font-size: 3em;
-  margin: 0;
-  padding: 0;
 }
 
 .winning-player {
