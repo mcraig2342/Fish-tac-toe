@@ -1,62 +1,62 @@
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Fish-Tac-Toe</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-  </head>
-  <body class="main">
-    <section class="left-side">
-      <div class="player-container">
-        <p class="player-token">🐠</p>
-        <h1 class="player-wins" id="player1Wins">0 Wins</h1>
-        <button class="clear-wins" id="clearP1Wins" type="button">Clear Wins</button>
-      </div>
-    </section>
-    <section class="middle">
-      <div class="turn-container">
-        <h1 class="turn-display" id="turnDisplay">🐠's Turn</h1>
-      </div>
-      <div class="game-board-container">
-        <section class="square-1 center" id="square1">
-        </section>
-        <section class="square-2 center" id="square2">
-        </section>
-        <section class="square-3 center" id="square3">
-        </section>
-        <section class="square-4 center" id="square4">
-        </section>
-        <section class="square-5 center" id="square5">
-        </section>
-        <section class="square-6 center" id="square6">
-        </section>
-        <section class="square-7 center" id="square7">
-        </section>
-        <section class="square-8 center" id="square8">
-        </section>
-        <section class="square-9 center" id="square9">
-        </section>
-      </div>
-    </section>
-    <section class="left-side">
-      <div class="player-container">
-        <p class="player-token">🐡</p>
-        <h1 class="player-wins" id="player2Wins">0 Wins</h1>
-        <button class="clear-wins" id="clearP2Wins" type="button">Clear Wins</button>
-      </div>
-    </section>
-    <div class="hidden popup-wrapper" id="popupWrapper">
-      <section class="winner-popup" id="winnerPopup">
-        <div>
-          <h1 class="winning-player" id="winningPlayer">🐡 Wins!</h1>
-          <h2 class="next-game">Next game starts in</h2>
-          <h1 class="count-down" id="countDown">5</h1>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>Fish-Tac-Toe</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body class="main">
+  <section class="left-side">
+    <div class="player-container">
+      <p class="player-token">🐠</p>
+      <h1 class="player-wins" id="player1Wins">0 Wins</h1>
+      <button class="clear-wins" id="clearP1Wins" type="button">Clear Wins</button>
+    </div>
+  </section>
+  <section class="middle">
+    <div class="turn-container">
+      <h1 class="turn-display" id="turnDisplay">🐠's Turn</h1>
+    </div>
+    <div class="game-board-container">
+      <section class="square-1 center" id="square1">
+      </section>
+      <section class="square-2 center" id="square2">
+      </section>
+      <section class="square-3 center" id="square3">
+      </section>
+      <section class="square-4 center" id="square4">
+      </section>
+      <section class="square-5 center" id="square5">
+      </section>
+      <section class="square-6 center" id="square6">
+      </section>
+      <section class="square-7 center" id="square7">
+      </section>
+      <section class="square-8 center" id="square8">
+      </section>
+      <section class="square-9 center" id="square9">
       </section>
     </div>
-    <script src="./src/player.js"></script>
-   <script src="./src/game.js"></script>
-   <script src="./src/main.js"></script>
-  </body>
+  </section>
+  <section class="left-side">
+    <div class="player-container">
+      <p class="player-token">🐡</p>
+      <h1 class="player-wins" id="player2Wins">0 Wins</h1>
+      <button class="clear-wins" id="clearP2Wins" type="button">Clear Wins</button>
+    </div>
+  </section>
+  <div class="hidden popup-wrapper" id="popupWrapper">
+    <section class="winner-popup" id="winnerPopup">
+      <div>
+        <h1 class="winning-player" id="winningPlayer">🐡 Wins!</h1>
+        <h2 class="next-game">Next game starts in</h2>
+        <h1 class="count-down" id="countDown">5</h1>
+      </div>
+    </section>
+  </div>
+  <script src="./src/player.js"></script>
+  <script src="./src/game.js"></script>
+  <script src="./src/main.js"></script>
+</body>
 </html>
