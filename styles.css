@@ -50,49 +50,85 @@
 .square-1 {
   border-bottom: .25rem solid #149ed9;
   border-right: .25rem solid #149ed9;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-2 {
   border-bottom: .25rem solid #149ed9;
   border-right: .25rem solid #149ed9;
   border-left: .25rem solid #149ed9;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-3 {
   border-bottom: .25rem solid #149ed9;
   border-left: .25rem solid #149ed9;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-4 {
   border-bottom: .25rem solid #1dacc2;
   border-right: .25rem solid #1dacc2;
   border-top: .25rem solid #1dacc2;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-5 {
   border: .25rem solid #1dacc2;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-6 {
   border-bottom: .25rem solid #1dacc2;
   border-left: .25rem solid #1dacc2;
   border-top: .25rem solid #1dacc2;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-7 {
   border-right: .25rem solid #1ba8a3;
   border-top: .25rem solid #1ba8a3;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-8 {
   border-left: .25rem solid #1ba8a3;
   border-right: .25rem solid #1ba8a3;
   border-top: .25rem solid #1ba8a3;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 .square-9 {
   border-left: .25rem solid #1ba8a3;
   border-top: .25rem solid #1ba8a3;
+  max-height: 132px;
+  max-width: 133.33px;
+  min-height: 132px;
+  min-width: 133.33px;
 }
 
 
@@ -157,6 +193,8 @@
 
 .new-token {
   font-size: 3em;
+  margin: 0;
+  padding: 0;
 }
 
 .winning-player {
