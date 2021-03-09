@@ -22,19 +22,23 @@ class Game {
   checkWinPlayer1() {
     for (var i = 0; i < this.gameBoard.length; i++) {
       if (this.gameBoard[i][0] === 1 && this.gameBoard[i][1] === 1 && this.gameBoard[i][2] === 1) {
-        this.player1.wins++;
-        player1.saveWinsToStorage();
+        this.player1.wins++
+        this.showWin();
+        showWinnerPopup(this.player1);
       } else if (this.gameBoard[0][i] === 1 && this.gameBoard[1][i] === 1 && this.gameBoard[2][i] === 1) {
         this.player1.wins++
-        player1.saveWinsToStorage();
+        this.showWin();
+        showWinnerPopup(this.player1);
       }
     }
     if (this.gameBoard[0][0] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][2] === 1) {
-      this.player1.wins++;
-      player1.saveWinsToStorage();
+      this.player1.wins++
+      this.showWin();
+      showWinnerPopup(this.player1);
     } else if (this.gameBoard[0][2] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][0] === 1) {
-      this.player1.wins++;
-      player1.saveWinsToStorage();
+      this.player1.wins++
+      this.showWin();
+      showWinnerPopup(this.player1);
     }
   }
 
@@ -42,18 +46,22 @@ class Game {
     for (var i = 0; i < this.gameBoard.length; i++) {
       if (this.gameBoard[i][0] === 2 && this.gameBoard[i][1] === 2 && this.gameBoard[i][2] === 2) {
         this.player2.wins++;
-        player2.saveWinsToStorage();
+        this.showWin();
+        showWinnerPopup(this.player2);
       } else if (this.gameBoard[0][i] === 2 && this.gameBoard[1][i] === 2 && this.gameBoard[2][i] === 2) {
         this.player2.wins++;
-        player2.saveWinsToStorage();
+        this.showWin();
+        showWinnerPopup(this.player2);
       }
     }
     if (this.gameBoard[0][0] === 2 && this.gameBoard[1][1] === 2 && this.gameBoard[2][2] === 2) {
       this.player2.wins++;
-      player2.saveWinsToStorage();
+      this.showWin();
+      showWinnerPopup(this.player2);
     } else if (this.gameBoard[0][2] === 2 && this.gameBoard[1][1] === 2 && this.gameBoard[2][0] === 2) {
       this.player2.wins++;
-      player2.saveWinsToStorage();
+      this.showWin();
+      showWinnerPopup(this.player2);
     }
   }
   checkCatsGame() {
@@ -63,6 +71,7 @@ class Game {
   }
 
   resetGame() {
+    location.reload();
     this.totalMoves = 0;
     this.turn = this.player1;
     this.gameBoard = [
@@ -70,5 +79,12 @@ class Game {
       [0, 0, 0],
       [0, 0, 0]
     ];
+  }
+
+  showWin(){
+  this.player1.saveWinsToStorage();
+  this.player2.saveWinsToStorage();
+  updatePlayerScore();
+  setTimeout(this.resetGame, 10 * 1000);
   }
 }

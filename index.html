@@ -10,7 +10,7 @@
     <section class="left-side">
       <div class="player-1-container">
         <p class="player-1-token">❌</p>
-        <h1 class="player-1-wins">0 wins</h1>
+        <h1 class="player-1-wins" id="player1Wins">0 wins</h1>
       </div>
     </section>
     <section class="middle">
@@ -38,9 +38,16 @@
     <section class="left-side">
       <div class="player-2-container"
         <p class="player-2-token">⭕️</p>
-        <h1 class="player-2-wins">0 wins</h1>
+        <h1 class="player-2-wins" id="player2Wins">0 wins</h1>
       </div>
     </section>
+    <div class="hidden popup-wrapper" id="popupWrapper">
+      <section class="winner-popup" id="winnerPopup">
+        <div>
+          <h1 id="winningPlayer">⭕️ Wins!</h1>
+        </div>
+      </section>
+    </div>
     <script src="./src/player.js"></script>
    <script src="./src/game.js"></script>
    <script src="./src/main.js"></script>
