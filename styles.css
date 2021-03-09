@@ -117,3 +117,32 @@
 .hidden {
   display: none;
 }
+.player-1-token {
+  font-size: 2em;
+  margin-top: 2em;
+  margin-left: 1.6em;
+
+}
+
+.player-1-container {
+  height: 20%;
+  width: 10em;
+}
+
+.player-1-wins {
+   font-size: 2em;
+   font-family: "Gill Sans", sans-serif;
+   color: #134d71;
+   margin-left: .8em;
+   margin-top: 1em;
+}
+
+.clear-p1-wins {
+   width: 10em;
+   font-size: 1em;
+   font-family: "Gill Sans", sans-serif;
+   margin-top: 25em;
+   background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
+   border: #78a7c6 inset;
+   border-radius: 5%;
+}
