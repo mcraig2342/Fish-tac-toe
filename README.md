@@ -19,7 +19,7 @@
 
 ## Project Links
 
-* [Repo](https://github.com/battan40/ideabox-boilerplate)
+* [Repo](https://github.com/mcraig2342/Fish-tac-toe)
 
 ## Contributors
 
