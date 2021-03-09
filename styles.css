@@ -13,7 +13,7 @@
 .left-side {
   width: 25%;
   height: 100%;
-  background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
+  background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
   display: flex;
   justify-content: center;
 }
@@ -27,7 +27,7 @@
   display: flex;
   width: 25%;
   height: 100%;
-  background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
+  background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
   display: flex;
   justify-content: center;
 }
@@ -48,51 +48,51 @@
 }
 
 .square-1 {
-  border-bottom: .25rem solid #3494D3;
-  border-right: .25rem solid #3494D3;
+  border-bottom: .25rem solid #149ed9;
+  border-right: .25rem solid #149ed9;
 }
 
 .square-2 {
-  border-bottom: .25rem solid #3494D3;
-  border-right: .25rem solid #3494D3;
-  border-left: .25rem solid #3494D3;
+  border-bottom: .25rem solid #149ed9;
+  border-right: .25rem solid #149ed9;
+  border-left: .25rem solid #149ed9;
 }
 
 .square-3 {
-  border-bottom: .25rem solid #3494D3;
-  border-left: .25rem solid #3494D3;
+  border-bottom: .25rem solid #149ed9;
+  border-left: .25rem solid #149ed9;
 }
 
 .square-4 {
-  border-bottom: .25rem solid #3494D3;
-  border-right: .25rem solid #3494D3;
-  border-top: .25rem solid #3494D3;
+  border-bottom: .25rem solid #1dacc2;
+  border-right: .25rem solid #1dacc2;
+  border-top: .25rem solid #1dacc2;
 }
 
 .square-5 {
-  border: .25rem solid #3494D3;
+  border: .25rem solid #1dacc2;
 }
 
 .square-6 {
-  border-bottom: .25rem solid #3494D3;
-  border-left: .25rem solid #3494D3;
-  border-top: .25rem solid #3494D3;
+  border-bottom: .25rem solid #1dacc2;
+  border-left: .25rem solid #1dacc2;
+  border-top: .25rem solid #1dacc2;
 }
 
 .square-7 {
-  border-right: .25rem solid #3494D3;
-  border-top: .25rem solid #3494D3;
+  border-right: .25rem solid #1ba8a3;
+  border-top: .25rem solid #1ba8a3;
 }
 
 .square-8 {
-  border-left: .25rem solid #3494D3;
-  border-right: .25rem solid #3494D3;
-  border-top: .25rem solid #3494D3;
+  border-left: .25rem solid #1ba8a3;
+  border-right: .25rem solid #1ba8a3;
+  border-top: .25rem solid #1ba8a3;
 }
 
 .square-9 {
-  border-left: .25rem solid #3494D3;
-  border-top: .25rem solid #3494D3;
+  border-left: .25rem solid #1ba8a3;
+  border-top: .25rem solid #1ba8a3;
 }
 
 
@@ -113,7 +113,7 @@
 .winner-popup {
   display: flex;
   justify-content: center;
-  background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
+  background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
   border: #78a7c6 inset;
   height: 30%;
   width: 40%;
@@ -143,7 +143,7 @@
    width: 10em;
    font-size: 1em;
    margin-top: 30em;
-   background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
+   background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
    border: #78a7c6 inset;
    border-radius: 5%;
 }
