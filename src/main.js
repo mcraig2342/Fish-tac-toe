@@ -22,6 +22,8 @@ var popupWrapper = document.getElementById("popupWrapper");
 var winningPlayer = document.getElementById("winningPlayer");
 var clearP1Wins = document.getElementById("clearP1Wins");
 var clearP2Wins = document.getElementById("clearP2Wins");
+var countDown = document.getElementById("countDown");
+var turnDisplay = document.getElementById("turnDisplay");
 
 window.addEventListener("load", updatePlayerScore)
 square1.addEventListener("click", clickSquare);
@@ -35,10 +37,10 @@ square8.addEventListener("click", clickSquare);
 square9.addEventListener("click", clickSquare);
 clearP1Wins.addEventListener("click", function() {
   clearWins(1)
-})
+});
 clearP2Wins.addEventListener("click", function() {
   clearWins(2)
-})
+});
 
 
 function clickSquare() {
@@ -48,12 +50,9 @@ function clickSquare() {
   event.target.innerHTML += newGame.turn.token;
   event.target.removeEventListener("click", clickSquare)
   newGame.changeTurn();
-  if (newGame.turn.id === 2) {
-    newGame.checkWinPlayer1();
-  } else {
-    newGame.checkWinPlayer2();
-  }
-  newGame.checkCatsGame();
+  updatePlayerTurn();
+  checkWins();
+  checkForDraw();
 }
 
 function updateCurrentBoard() {
@@ -97,5 +96,36 @@ function clearWins(player) {
     localStorage.setItem(2,0)
     player2.wins = 0
     updatePlayerScore();
+  }
+}
+
+function startCountDown() {
+  var timeleft = 10;
+  var timer = setInterval(function() {
+      countDown.innerHTML = timeleft;
+      timeleft -= 1;
+  }, 1000);
+}
+
+function updatePlayerTurn() {
+  if (newGame.turn.id === 1) {
+    turnDisplay.innerText = "❌'s Turn";
+  } else if (newGame.turn.id === 2){
+    turnDisplay.innerText = "⭕️'s Turn";
+  }
+}
+
+function checkWins() {
+  if (newGame.turn.id === 2) {
+    newGame.checkWinPlayer1();
+  } else {
+    newGame.checkWinPlayer2();
+  }
+}
+
+function checkForDraw() {
+  if (newGame.checkCatsGame()) {
+    turnDisplay.innerText = "Draw!";
+    setTimeout(newGame.resetGame, 5 * 1000);
   }
 }
