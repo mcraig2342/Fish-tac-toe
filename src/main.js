@@ -48,7 +48,7 @@ function clickSquare() {
   newGame.updateGameBoard(currentBoard);
   newGame.totalMoves++;
   event.target.innerHTML += `<p class="new-token">${newGame.turn.token}</p>`;
-  event.target.removeEventListener("click", clickSquare)
+  event.target.removeEventListener("click", clickSquare);
   newGame.changeTurn();
   updatePlayerTurn();
   checkWins();
@@ -84,17 +84,17 @@ function updatePlayerScore() {
 
 function showWinnerPopup(player) {
   winningPlayer.innerText = `${player.token} Wins!`
-  popupWrapper.classList.remove("hidden")
+  popupWrapper.classList.remove("hidden");
 }
 
 function clearWins(player) {
   if (player === 1) {
-    localStorage.setItem(1, 0)
-    player1.wins = 0
+    localStorage.setItem(1, 0);
+    player1.wins = 0;
     updatePlayerScore();
   } else {
-    localStorage.setItem(2, 0)
-    player2.wins = 0
+    localStorage.setItem(2, 0);
+    player2.wins = 0;
     updatePlayerScore();
   }
 }
@@ -116,7 +116,7 @@ function updatePlayerTurn() {
 }
 
 function reload() {
-  location.reload()
+  location.reload();
 }
 
 function updateWins() {

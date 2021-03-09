@@ -23,15 +23,15 @@ class Game {
     for (var i = 0; i < this.gameBoard.length; i++) {
       if (this.gameBoard[i][0] === this.gameBoard[i][1] && this.gameBoard[i][2] === this.gameBoard[i][0] && this.gameBoard[i][0] !== 0) {
         if (this.gameBoard[i][0] === 1) {
-          return 1
+          return 1;
         } else {
-          return 2
+          return 2;
         }
       } else if (this.gameBoard[0][i] === this.gameBoard[1][i] && this.gameBoard[2][i] === this.gameBoard[0][i] && this.gameBoard[0][i] !== 0) {
         if (this.gameBoard[0][i] === 1) {
-          return 1
+          return 1;
         } else {
-          return 2
+          return 2;
         }
       }
     }
@@ -40,15 +40,15 @@ class Game {
   checkDiagonal() {
     if (this.gameBoard[0][0] === this.gameBoard[1][1] && this.gameBoard[2][2] === this.gameBoard[0][0] && this.gameBoard[0][0] !== 0) {
       if (this.gameBoard[0][0] === 1) {
-        return 1
+        return 1;
       } else {
-        return 2
+        return 2;
       }
     } else if (this.gameBoard[0][2] === this.gameBoard[1][1] && this.gameBoard[2][0] === this.gameBoard[0][2] && this.gameBoard[0][2] !== 0) {
       if (this.gameBoard[0][2] === 1) {
-        return 1
+        return 1;
       } else {
-        return 2
+        return 2;
       }
     }
   }
