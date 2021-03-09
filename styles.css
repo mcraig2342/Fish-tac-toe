@@ -1,9 +1,9 @@
 *,
 *:after,
 *:before {
-  box-sizing: border-box;
+  font-family: "Gill Sans", sans-serif;
+  color: #134d71;
   margin: 0;
-  padding: 0;
 }
 
 .main {
@@ -21,9 +21,6 @@
 .middle {
   width: 50%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .right-side {
@@ -36,10 +33,18 @@
 }
 
 .game-board-container {
-  height: 20em;
-  width: 20em;
+  margin-top: 15%;
+  margin-left: 22%;
+  height: 25em;
+  width: 25em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .square-1 {
@@ -108,15 +113,13 @@
 .winner-popup {
   display: flex;
   justify-content: center;
-  background-color: #3494D3;
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
+  border: #78a7c6 inset;
   height: 30%;
   width: 40%;
 
 }
 
-.hidden {
-  display: none;
-}
 .player-token {
   font-size: 2em;
   margin-top: 2em;
@@ -131,7 +134,6 @@
 
 .player-wins {
    font-size: 2em;
-   font-family: "Gill Sans", sans-serif;
    color: #134d71;
    margin-left: .8em;
    margin-top: 1em;
@@ -140,9 +142,38 @@
 .clear-wins {
    width: 10em;
    font-size: 1em;
-   font-family: "Gill Sans", sans-serif;
-   margin-top: 25em;
+   margin-top: 30em;
    background: linear-gradient(#134d71, #78a7c6, #f7e4bf) fixed;
    border: #78a7c6 inset;
    border-radius: 5%;
+}
+
+.turn-display {
+  font-size:2em;
+  color: #134d71;
+  margin-top: 2em;
+  margin-left: 8.5em;
+}
+
+.new-token {
+  font-size: 3em;
+}
+
+.winning-player {
+  margin-left: 1.9em;
+  font-size: 2em;
+}
+
+.next-game {
+  margin-top: 1em;
+}
+
+.count-down {
+  margin-top: 1em;
+  margin-left: 2em;
+  font-size: 3em;
+}
+
+.hidden {
+  display: none;
 }

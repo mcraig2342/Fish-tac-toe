@@ -47,7 +47,7 @@ function clickSquare() {
   updateCurrentBoard();
   newGame.updateGameBoard(currentBoard);
   newGame.totalMoves++;
-  event.target.innerHTML += newGame.turn.token;
+  event.target.innerHTML += `<p class="new-token">${newGame.turn.token}</p>`;
   event.target.removeEventListener("click", clickSquare)
   newGame.changeTurn();
   updatePlayerTurn();
