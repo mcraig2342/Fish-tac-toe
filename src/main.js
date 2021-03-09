@@ -100,7 +100,7 @@ function clearWins(player) {
 }
 
 function startCountDown() {
-  var timeleft = 10;
+  var timeleft = 4;
   var timer = setInterval(function() {
     countDown.innerHTML = timeleft;
     timeleft -= 1;
@@ -122,7 +122,7 @@ function reload() {
 function updateWins() {
   newGame.showWin();
   updatePlayerScore();
-  setTimeout(reload, 11 * 1000);
+  setTimeout(reload, 5 * 1000);
 }
 
 function checkWins() {
