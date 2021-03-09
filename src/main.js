@@ -3,8 +3,8 @@ var currentBoard = [
   [0, 0, 0],
   [0, 0, 0]
 ];
-var player1 = new Player(1, "❌");
-var player2 = new Player(2, "⭕️");
+var player1 = new Player(1, "🐠");
+var player2 = new Player(2, "🐡");
 var newGame = new Game(player1, player2, currentBoard);
 
 var square1 = document.getElementById("square1");
@@ -47,7 +47,7 @@ function clickSquare() {
   updateCurrentBoard();
   newGame.updateGameBoard(currentBoard);
   newGame.totalMoves++;
-  event.target.innerHTML += newGame.turn.token;
+  event.target.innerHTML += `<p class="new-token">${newGame.turn.token}</p>`;
   event.target.removeEventListener("click", clickSquare)
   newGame.changeTurn();
   updatePlayerTurn();
@@ -78,8 +78,8 @@ function updateCurrentBoard() {
 }
 
 function updatePlayerScore() {
-  player1Wins.innerText = `${player1.wins} wins`;
-  player2Wins.innerText = `${player2.wins} wins`;
+  player1Wins.innerText = `${player1.wins} Wins`;
+  player2Wins.innerText = `${player2.wins} Wins`;
 }
 
 function showWinnerPopup(player) {
@@ -109,9 +109,9 @@ function startCountDown() {
 
 function updatePlayerTurn() {
   if (newGame.turn.id === 1) {
-    turnDisplay.innerText = "❌'s Turn";
+    turnDisplay.innerText = "🐠's Turn";
   } else if (newGame.turn.id === 2){
-    turnDisplay.innerText = "⭕️'s Turn";
+    turnDisplay.innerText = "🐡's Turn";
   }
 }
 
