@@ -47,12 +47,19 @@
 }
 
 .clear-wins {
+  height: 2em;
   width: 10em;
   font-size: 1em;
   margin-top: 30em;
   background: linear-gradient(#149ed9, #1dacc2, #d99b14) fixed;
   border: #78a7c6 inset;
-  border-radius: 5%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-wins:hover {
+  height: 2.25em;
+  width: 10.2em;
 }
 
 /* middle and gameBoard */
@@ -81,6 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   max-height: 132px;
   max-width: 133.33px;
   min-height: 132px;
