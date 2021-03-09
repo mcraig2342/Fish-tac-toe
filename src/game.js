@@ -19,7 +19,7 @@ class Game {
     this.gameBoard = currentBoard;
   }
 
-  checkWin() {
+  checkColumnsAndRows() {
     for (var i = 0; i < this.gameBoard.length; i++) {
       if (this.gameBoard[i][0] === this.gameBoard[i][1] && this.gameBoard[i][2] === this.gameBoard[i][0] && this.gameBoard[i][0] !== 0) {
         if (this.gameBoard[i][0] === 1) {
@@ -28,13 +28,16 @@ class Game {
           return 2
         }
       } else if (this.gameBoard[0][i] === this.gameBoard[1][i] && this.gameBoard[2][i] === this.gameBoard[0][i] && this.gameBoard[0][i] !== 0) {
-        if (this.gameBoard[i][0] === 1) {
+        if (this.gameBoard[0][i] === 1) {
           return 1
         } else {
           return 2
         }
       }
     }
+  }
+
+  checkDiagonal() {
     if (this.gameBoard[0][0] === this.gameBoard[1][1] && this.gameBoard[2][2] === this.gameBoard[0][0] && this.gameBoard[0][0] !== 0) {
       if (this.gameBoard[0][0] === 1) {
         return 1
@@ -49,7 +52,6 @@ class Game {
       }
     }
   }
-
   checkCatsGame() {
     if (this.totalMoves >= 9) {
       return true;

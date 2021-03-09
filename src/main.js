@@ -126,11 +126,11 @@ function updateWins() {
 }
 
 function checkWins() {
-  if (newGame.checkWin() === 1) {
+  if (newGame.checkColumnsAndRows() === 1 || newGame.checkDiagonal() === 1) {
     player1.wins++;
     updateWins();
     showWinnerPopup(player1);
-  } else if (newGame.checkWin() === 2) {
+  } else if (newGame.checkColumnsAndRows() === 2 || newGame.checkDiagonal() === 2) {
     player2.wins++;
     updateWins();
     showWinnerPopup(player2);
