@@ -19,49 +19,37 @@ class Game {
     this.gameBoard = currentBoard;
   }
 
-  checkWinPlayer1() {
+  checkColumnsAndRows() {
     for (var i = 0; i < this.gameBoard.length; i++) {
-      if (this.gameBoard[i][0] === 1 && this.gameBoard[i][1] === 1 && this.gameBoard[i][2] === 1) {
-        this.player1.wins++
-        this.showWin();
-        showWinnerPopup(this.player1);
-      } else if (this.gameBoard[0][i] === 1 && this.gameBoard[1][i] === 1 && this.gameBoard[2][i] === 1) {
-        this.player1.wins++
-        this.showWin();
-        showWinnerPopup(this.player1);
+      if (this.gameBoard[i][0] === this.gameBoard[i][1] && this.gameBoard[i][2] === this.gameBoard[i][0] && this.gameBoard[i][0] !== 0) {
+        if (this.gameBoard[i][0] === 1) {
+          return 1;
+        } else {
+          return 2;
+        }
+      } else if (this.gameBoard[0][i] === this.gameBoard[1][i] && this.gameBoard[2][i] === this.gameBoard[0][i] && this.gameBoard[0][i] !== 0) {
+        if (this.gameBoard[0][i] === 1) {
+          return 1;
+        } else {
+          return 2;
+        }
       }
-    }
-    if (this.gameBoard[0][0] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][2] === 1) {
-      this.player1.wins++
-      this.showWin();
-      showWinnerPopup(this.player1);
-    } else if (this.gameBoard[0][2] === 1 && this.gameBoard[1][1] === 1 && this.gameBoard[2][0] === 1) {
-      this.player1.wins++
-      this.showWin();
-      showWinnerPopup(this.player1);
     }
   }
 
-  checkWinPlayer2() {
-    for (var i = 0; i < this.gameBoard.length; i++) {
-      if (this.gameBoard[i][0] === 2 && this.gameBoard[i][1] === 2 && this.gameBoard[i][2] === 2) {
-        this.player2.wins++;
-        this.showWin();
-        showWinnerPopup(this.player2);
-      } else if (this.gameBoard[0][i] === 2 && this.gameBoard[1][i] === 2 && this.gameBoard[2][i] === 2) {
-        this.player2.wins++;
-        this.showWin();
-        showWinnerPopup(this.player2);
+  checkDiagonal() {
+    if (this.gameBoard[0][0] === this.gameBoard[1][1] && this.gameBoard[2][2] === this.gameBoard[0][0] && this.gameBoard[0][0] !== 0) {
+      if (this.gameBoard[0][0] === 1) {
+        return 1;
+      } else {
+        return 2;
       }
-    }
-    if (this.gameBoard[0][0] === 2 && this.gameBoard[1][1] === 2 && this.gameBoard[2][2] === 2) {
-      this.player2.wins++;
-      this.showWin();
-      showWinnerPopup(this.player2);
-    } else if (this.gameBoard[0][2] === 2 && this.gameBoard[1][1] === 2 && this.gameBoard[2][0] === 2) {
-      this.player2.wins++;
-      this.showWin();
-      showWinnerPopup(this.player2);
+    } else if (this.gameBoard[0][2] === this.gameBoard[1][1] && this.gameBoard[2][0] === this.gameBoard[0][2] && this.gameBoard[0][2] !== 0) {
+      if (this.gameBoard[0][2] === 1) {
+        return 1;
+      } else {
+        return 2;
+      }
     }
   }
   checkCatsGame() {
@@ -71,7 +59,6 @@ class Game {
   }
 
   resetGame() {
-    location.reload();
     this.totalMoves = 0;
     this.turn = this.player1;
     this.gameBoard = [
@@ -82,10 +69,9 @@ class Game {
   }
 
   showWin() {
-  startCountDown();
-  this.player1.saveWinsToStorage();
-  this.player2.saveWinsToStorage();
-  updatePlayerScore();
-  setTimeout(this.resetGame, 11 * 1000);
+    startCountDown();
+    this.player1.saveWinsToStorage();
+    this.player2.saveWinsToStorage();
+    setTimeout(this.resetGame, 5 * 1000);
   }
 }

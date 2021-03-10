@@ -25,7 +25,7 @@ var clearP2Wins = document.getElementById("clearP2Wins");
 var countDown = document.getElementById("countDown");
 var turnDisplay = document.getElementById("turnDisplay");
 
-window.addEventListener("load", updatePlayerScore)
+window.addEventListener("load", updatePlayerScoreDisplayText)
 square1.addEventListener("click", clickSquare);
 square2.addEventListener("click", clickSquare);
 square3.addEventListener("click", clickSquare);
@@ -48,7 +48,7 @@ function clickSquare() {
   newGame.updateGameBoard(currentBoard);
   newGame.totalMoves++;
   event.target.innerHTML += `<p class="new-token">${newGame.turn.token}</p>`;
-  event.target.removeEventListener("click", clickSquare)
+  event.target.removeEventListener("click", clickSquare);
   newGame.changeTurn();
   updatePlayerTurn();
   checkWins();
@@ -77,55 +77,71 @@ function updateCurrentBoard() {
   }
 }
 
-function updatePlayerScore() {
+function updatePlayerScoreDisplayText() {
   player1Wins.innerText = `${player1.wins} Wins`;
   player2Wins.innerText = `${player2.wins} Wins`;
 }
 
 function showWinnerPopup(player) {
   winningPlayer.innerText = `${player.token} Wins!`
-  popupWrapper.classList.remove("hidden")
+  popupWrapper.classList.remove("hidden");
 }
 
 function clearWins(player) {
   if (player === 1) {
-    localStorage.setItem(1,0)
-    player1.wins = 0
-    updatePlayerScore();
+    localStorage.setItem(1, 0);
+    player1.wins = 0;
+    updatePlayerScoreDisplayText();
   } else {
-    localStorage.setItem(2,0)
-    player2.wins = 0
-    updatePlayerScore();
+    localStorage.setItem(2, 0);
+    player2.wins = 0;
+    updatePlayerScoreDisplayText();
   }
 }
 
 function startCountDown() {
-  var timeleft = 10;
+  var timeleft = 4;
   var timer = setInterval(function() {
-      countDown.innerHTML = timeleft;
-      timeleft -= 1;
+    countDown.innerHTML = timeleft;
+    timeleft -= 1;
   }, 1000);
 }
 
 function updatePlayerTurn() {
   if (newGame.turn.id === 1) {
     turnDisplay.innerText = "🐠's Turn";
-  } else if (newGame.turn.id === 2){
+  } else if (newGame.turn.id === 2) {
     turnDisplay.innerText = "🐡's Turn";
   }
 }
 
+function reload() {
+  location.reload()
+}
+
+function updateWins() {
+  newGame.showWin();
+  updatePlayerScoreDisplayText();
+  setTimeout(reload, 5 * 1000);
+}
+
 function checkWins() {
-  if (newGame.turn.id === 2) {
-    newGame.checkWinPlayer1();
-  } else {
-    newGame.checkWinPlayer2();
+  if (newGame.checkColumnsAndRows() === 1 || newGame.checkDiagonal() === 1) {
+    player1.wins++;
+    updateWins();
+    showWinnerPopup(player1);
+  } else if (newGame.checkColumnsAndRows() === 2 || newGame.checkDiagonal() === 2) {
+    player2.wins++;
+    updateWins();
+    showWinnerPopup(player2);
   }
 }
+
 
 function checkForDraw() {
   if (newGame.checkCatsGame()) {
     turnDisplay.innerText = "Draw!";
     setTimeout(newGame.resetGame, 5 * 1000);
+    setTimeout(reload, 5 * 1000);
   }
 }
