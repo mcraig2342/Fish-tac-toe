@@ -25,7 +25,7 @@ var clearP2Wins = document.getElementById("clearP2Wins");
 var countDown = document.getElementById("countDown");
 var turnDisplay = document.getElementById("turnDisplay");
 
-window.addEventListener("load", updatePlayerScoreDisplayText)
+window.addEventListener("load", updatePlayerScoreDisplayText);
 square1.addEventListener("click", clickSquare);
 square2.addEventListener("click", clickSquare);
 square3.addEventListener("click", clickSquare);
@@ -36,10 +36,10 @@ square7.addEventListener("click", clickSquare);
 square8.addEventListener("click", clickSquare);
 square9.addEventListener("click", clickSquare);
 clearP1Wins.addEventListener("click", function() {
-  clearWins(1)
+  clearWins(1);
 });
 clearP2Wins.addEventListener("click", function() {
-  clearWins(2)
+  clearWins(2);
 });
 
 
@@ -83,7 +83,7 @@ function updatePlayerScoreDisplayText() {
 }
 
 function showWinnerPopup(player) {
-  winningPlayer.innerText = `${player.token} Wins!`
+  winningPlayer.innerText = `${player.token} Wins!`;
   popupWrapper.classList.remove("hidden");
 }
 
@@ -116,7 +116,7 @@ function updatePlayerTurn() {
 }
 
 function reload() {
-  location.reload()
+  location.reload();
 }
 
 function updateWins() {
@@ -126,9 +126,8 @@ function updateWins() {
   setTimeout(reload, 5 * 1000);
 }
 
-function checkWins() {
-  if (newGame.checkColumnsAndRows() === 1 || newGame.checkDiagonal() === 1) {
-    player1.wins++;
+function checkWins() {if (newGame.checkColumnsAndRows() === 1 || newGame.checkDiagonal() === 1) {
+  player1.wins++;
     updateWins();
     showWinnerPopup(player1);
   } else if (newGame.checkColumnsAndRows() === 2 || newGame.checkDiagonal() === 2) {
