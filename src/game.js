@@ -69,7 +69,6 @@ class Game {
   }
 
   showWin() {
-    startCountDown();
     this.player1.saveWinsToStorage();
     this.player2.saveWinsToStorage();
     setTimeout(this.resetGame, 5 * 1000);

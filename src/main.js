@@ -121,6 +121,7 @@ function reload() {
 
 function updateWins() {
   newGame.showWin();
+  startCountDown();
   updatePlayerScoreDisplayText();
   setTimeout(reload, 5 * 1000);
 }
